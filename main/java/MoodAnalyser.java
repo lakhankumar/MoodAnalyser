@@ -5,6 +5,9 @@ public class MoodAnalyser {
     public MoodAnalyser(String message) {
         this.message = message;
     }
+    public String analyserMood(String message) {
+        if (message.toLowerCase().contains("sad")) {
+            return "SAD";
 
     public String analyserMood() {
         try {
@@ -18,7 +21,7 @@ public class MoodAnalyser {
             return "HAPPY";
         } catch (NullPointerException exception) {
             throw new MoodAnalyserException(MoodAnalyserException.ExceptionType.ENTERED_NULL,
-                    "Enter Proper Message. NULL Not Allowed");
+                    "Enter Proper Message. NULL Not Allowed")
         }
     }
 }
