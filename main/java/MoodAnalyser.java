@@ -1,9 +1,19 @@
 
 public class MoodAnalyser {
-    public String analyserMood(String message){
-        if(message.toLowerCase().contains("sad")){
+   private String message;
+
+    public MoodAnalyser(String message) {
+        this.message = message;
+    }
+
+    public MoodAnalyser() {
+
+    }
+
+    public String analyserMood(String message) {
+        if (message.toLowerCase().contains("sad")) {
             return "SAD";
         }
-        return "happy";
+        return "HAPPY";
     }
 }
