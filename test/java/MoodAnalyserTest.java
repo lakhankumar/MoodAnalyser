@@ -1,5 +1,4 @@
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
 
 public class MoodAnalyserTest {
@@ -16,5 +15,19 @@ public class MoodAnalyserTest {
         MoodAnalyser moodAnalyser = new MoodAnalyser("i am happy");
         String result = moodAnalyser.analyserMood();
         Assert.assertEquals("HAPPY", result);
+    }
+
+    @Test(expected = MoodAnalyserException.class)
+    public void givenMessage_WhenNull_ShouldReturnNull() throws MoodAnalyserException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser(null);
+        String result = moodAnalyser.analyserMood();
+        Assert.assertEquals("Enter Proper Message. NULL Not Allowed", result);
+    }
+
+    @Test(expected = MoodAnalyserException.class)
+    public void givenMessage_WhenEmpty_ShouldReturnEmpty() throws MoodAnalyserException {
+        MoodAnalyser moodAnalyser = new MoodAnalyser("");
+        String result = moodAnalyser.analyserMood();
+        Assert.assertEquals("Enter Proper Message. EMPTY Not Allowed", result);
     }
 }
