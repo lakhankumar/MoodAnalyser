@@ -6,10 +6,6 @@ public class MoodAnalyser {
         this.message = message;
     }
 
-    public MoodAnalyser() {
-
-    }
-
     public String analyserMood(String message) {
         if (message.toLowerCase().contains("sad")) {
             return "SAD";
